@@ -1,9 +1,9 @@
-require "burlesque/version"
+require "scrunchie/version"
 
 class ElasticError < StandardError
 end
 
-module Burlesque
+module Scrunchie
   class Blast
     attr_accessor :username, :api_key, :listname
 
