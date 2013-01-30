@@ -1,4 +1,5 @@
 require "scrunchie/version"
+require "faraday"
 
 class ElasticError < StandardError
 end
@@ -19,7 +20,7 @@ module Scrunchie
 
     # Create email in the database.
     def create_contact(email, optional_hash={})
-      @obj.post('create-contact', @auth.merge(optional_hash)
+      @obj.post('create-contact', @auth.merge(optional_hash))
     end
 
     # Delete email from the database.
