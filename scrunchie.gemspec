@@ -1,11 +1,11 @@
 # -*- encoding: utf-8 -*-
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'burlesque/version'
+require 'scrunchie/version'
 
 Gem::Specification.new do |gem|
-  gem.name          = "burlesque"
-  gem.version       = Burlesque::VERSION
+  gem.name          = "scrunchie"
+  gem.version       = Scrunchie::VERSION
   gem.authors       = ["Alan Schwarz"]
   gem.email         = ["alan.jcfs@gmail.com"]
   gem.description   = %q{A Contact List Management Wrapper for Elastic Email API}
