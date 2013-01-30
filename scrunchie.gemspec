@@ -10,7 +10,7 @@ Gem::Specification.new do |gem|
   gem.email         = ["alan.jcfs@gmail.com"]
   gem.description   = %q{A Contact List Management Wrapper for Elastic Email API}
   gem.summary       = %q{This wrapper is currently only for adding and removing contacts and lists}
-  gem.homepage      = ""
+  gem.homepage      = "http://github.com/alanjcfs/scrunchie"
 
   gem.files         = `git ls-files`.split($/)
   gem.executables   = gem.files.grep(%r{^bin/}).map{ |f| File.basename(f) }
