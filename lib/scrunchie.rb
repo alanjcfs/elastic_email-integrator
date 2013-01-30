@@ -61,7 +61,7 @@ module Scrunchie
 
     # Get a list of emails with possible firstname and lastname attributes from the list.
     def get_contacts(params={})
-      @obj.get('get-contacts', @auth.merge(params)
+      @obj.get('get-contacts', @auth.merge(params))
     end
 
     # Get a CSV file containing all the contacts from @listname.
