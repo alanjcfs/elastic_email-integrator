@@ -76,7 +76,7 @@ module Scrunchie
 
   class XML
     # Attemps to parse the body, and rescue the ParseError to do the right thing 
-    def parse(body)
+    def self.parse(body)
       begin
         MultiXml.parse(body)
       rescue MultiXml::ParseError
