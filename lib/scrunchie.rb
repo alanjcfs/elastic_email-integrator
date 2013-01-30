@@ -81,6 +81,7 @@ module Scrunchie
         MultiXml.parse(body)
       rescue MultiXml::ParseError
         raise ElasticError, body
+      end
       rescue ElasticError => body 
         if body.start_with?("Error")
           return { "Error" => body }
