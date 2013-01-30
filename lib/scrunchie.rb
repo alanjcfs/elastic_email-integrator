@@ -83,9 +83,9 @@ module Scrunchie
         raise ElasticError, body
       rescue ElasticError => body 
         if body.start_with?("Error")
-          return { "Error": body }
+          return { "Error" => body }
         else
-          return { "Other": body }
+          return { "Other" => body }
         end
       end
     end
