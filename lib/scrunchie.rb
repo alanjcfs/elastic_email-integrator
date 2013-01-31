@@ -75,11 +75,9 @@ module Scrunchie
     class << self
       # Attemps to parse the body, and rescue the ParseError to do the right thing 
       def parse(body)
-        begin
-          MultiXml.parse(body)
-        rescue MultiXml::ParseError 
-          convert_to_hash(body)
-        end
+        MultiXml.parse(body)
+      rescue MultiXml::ParseError 
+        convert_to_hash(body)
       end
 
       def convert_to_hash(body)
