@@ -1,9 +1,6 @@
 require "scrunchie/version"
 require "faraday"
 
-class ElasticError < StandardError
-end
-
 module Scrunchie
   class Blast
     attr_accessor :username, :api_key, :listname
@@ -86,8 +83,6 @@ module Scrunchie
       end
 
       def convert_to_hash(body)
-        attempt_to_parse(body)
-      rescue ElasticError => body 
         if body.start_with?("Error")
           return { "Error" => body }
         else
