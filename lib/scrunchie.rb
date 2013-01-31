@@ -77,7 +77,7 @@ module Scrunchie
       def parse(body)
         begin
           MultiXml.parse(body)
-        rescue MultiXml::ParseError => body
+        rescue MultiXml::ParseError 
           convert_to_hash(body)
         end
       end
