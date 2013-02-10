@@ -1,6 +1,6 @@
 # Scrunchie
 
-TODO: Write a gem description
+This gem interfaces with the Elastic Email's API at <http://www.elasticemail.com>.
 
 ## Installation
 
@@ -16,9 +16,26 @@ Or install it yourself as:
 
     $ gem install scrunchie
 
-## Usage
+## Example Usage
 
-TODO: Write usage instructions here
+Set the configuration in a file that is loaded by Rails autoload path or create a new folder in app/
+and set create a class to hold the email address you register at Elastic Email and the API key.
+
+    class CharmBlast
+      def initialize(params)
+        @params = params
+        @faraday = Scrunchie::Blast.new('your-email@address.com', 'your-authentication-token', 'Name of List')
+      end
+
+      def deliver
+        @resp = @faraday.create_contact(@params)
+        @parsed = Scrunchie::XML.parse(@resp.body)
+      end
+    end
+
+Get the response:
+
+    @resp = CharmBlast.new(email: 'email@address.com', first_name: 'email', last_name: 'address').deliver
 
 ## Contributing
 
